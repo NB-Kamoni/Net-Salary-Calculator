@@ -3,16 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css"/>
 <title>Net Salary Calculator</title>
 </head>
 <body>
-  <h1>Net Salary Calculator</h1>
-  <form id="salaryForm">
-    <label for="grossPay">Enter Gross Pay (Ksh):</label>
-    <input type="number" id="grossPay" name="grossPay" required>
-    <button type="submit">Calculate Net Salary</button>
-  </form>
-  <div id="result"></div>
-  <script src="script.js"></script>
+
+    <div class="card">
+        <div class="card-header">Net Salary Calculator</div>
+        <div class="card-body">
+          <h5 class="card-title">Calculate net salary from the gross.</h5>
+          <form id="salaryForm">
+            <label for="grossPay">Enter Gross Pay in Ksh:</label>
+            <input type="number" id="grossPay" name="grossPay" required>
+            <button type="submit">Calculate Net Salary</button>
+          </form>
+          <div id="result"></div>
+          <script src="script.js"></script>
+        </div>
 </body>
 </html>
