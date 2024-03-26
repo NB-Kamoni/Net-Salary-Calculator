@@ -7,9 +7,9 @@ This is a tool for calculating the net salary from gross pay. It accounts for de
 * Clone the forked repository into your local environment.
 * On your terminal
 ```
-git clone 
+git clone https://github.com/NB-Kamoni/Net-Salary-Calculator
 
-cd 
+cd Net-Salary-Calculator
 
 code . 
 ```
