@@ -7,7 +7,7 @@
   }
   
   .card-header {
-    background-color: #007bff;
+    background-color: #0775ea;
     color: #fff;
     padding: 10px;
     border-top-left-radius: 5px;
@@ -41,7 +41,7 @@
   }
   
   button[type="submit"] {
-    background-color: #28a745;
+    background-color: #14d340;
     color: #fff;
     border: none;
     padding: 8px 12px;
@@ -57,4 +57,18 @@
     margin-top: 20px;
     font-size: 1.1em;
   }
+
+  .summary-container {
+    display: flex;
+    flex-direction: column;
+  }
   
+  .summary-container p {
+    margin: 5px 0;
+    
+  }
+  
+  .summary-container p span {
+    margin-left: 20px;
+     
+  }

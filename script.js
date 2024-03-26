@@ -1,14 +1,14 @@
 document.getElementById('salaryForm').addEventListener('submit', function(event) {
     event.preventDefault();
     
-    // Get gross pay input value
+    // Receives gross pay value
     const grossPay = parseFloat(document.getElementById('grossPay').value);
     const annualPay = grossPay * 12;
     const personalRelief = 2400;
     let taxRate = 0;
     let nhifDeduction = 0;
   
-    // Determine tax rate based on annual pay
+    // Determines PAYE tax rate on annual pay
     if (annualPay <= 288000) {
       taxRate = 0.1;
     } else if (annualPay <= 388000) {
@@ -21,7 +21,7 @@ document.getElementById('salaryForm').addEventListener('submit', function(event)
       taxRate = 0.35;
     }
   
-    // Calculate NHIF deduction based on gross pay
+    // Calculates NHIF deductions from gross pay
     if (grossPay < 6000) {
       nhifDeduction = 150;
     } else if (grossPay < 8000) {
@@ -58,19 +58,20 @@ document.getElementById('salaryForm').addEventListener('submit', function(event)
       nhifDeduction = 1700;
     }
   
-    // Deduct 1.5% for housing levy
+    // Deducts 1.5% for housing levy
     const housingLevy = grossPay * 0.015;
   
-    // Calculate net salary
+    // Calculates net salary
     const taxableIncome = annualPay - personalRelief;
     let taxAmount = taxableIncome * taxRate;
     const netSalary = grossPay - (taxAmount / 12) - (nhifDeduction / 12) - housingLevy;
   
-    // Display result on the webpage
-    document.getElementById('result').innerHTML = `
-      <h2>Result</h2>
-      <p>Gross Pay: Ksh ${grossPay.toFixed(2)}</p>
-      <p>Net Salary: Ksh ${netSalary.toFixed(2)}</p>
-    `;
+    // Gives the results
+    // Update the result display in the summary section
+    document.getElementById('grossPayValue').textContent = grossPay.toFixed(2);
+    document.getElementById('personalReliefValue').textContent = personalRelief.toFixed(2);
+    document.getElementById('taxAmountValue').textContent = taxAmount.toFixed(2);
+    document.getElementById('nhifDeductionValue').textContent = nhifDeduction.toFixed(2);
+    document.getElementById('housingLevyValue').textContent = housingLevy.toFixed(2);
+    document.getElementById('netSalaryValue').textContent = netSalary.toFixed(2);
   });
-  
