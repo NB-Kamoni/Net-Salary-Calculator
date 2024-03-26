@@ -19,7 +19,9 @@ code .
   open index.html
   ```
 * On Windows
+```
 explorer.exe index.html
+```
 
 ## Languages
 1. JavaScript
