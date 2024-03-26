@@ -41,7 +41,7 @@
   }
   
   button[type="submit"] {
-    background-color: #14d340;
+    background-color: #0775ea;
     color: #fff;
     border: none;
     padding: 8px 12px;
@@ -50,7 +50,7 @@
   }
   
   button[type="submit"]:hover {
-    background-color: #218838;
+    background-color: #0775ea;
   }
   
   #result {

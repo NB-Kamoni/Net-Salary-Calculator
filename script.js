@@ -7,8 +7,9 @@ document.getElementById('salaryForm').addEventListener('submit', function(event)
     const personalRelief = 2400;
     let taxRate = 0;
     let nhifDeduction = 0;
+   
   
-    // Determines PAYE tax rate on annual pay
+    // Determines tax rate to calculate PAYE on annual pay
     if (annualPay <= 288000) {
       taxRate = 0.1;
     } else if (annualPay <= 388000) {
@@ -64,14 +65,20 @@ document.getElementById('salaryForm').addEventListener('submit', function(event)
     // Calculates net salary
     const taxableIncome = annualPay - personalRelief;
     let taxAmount = taxableIncome * taxRate;
+    let payE = taxAmount / 12;
     const netSalary = grossPay - (taxAmount / 12) - (nhifDeduction / 12) - housingLevy;
   
     // Gives the results
     // Update the result display in the summary section
     document.getElementById('grossPayValue').textContent = grossPay.toFixed(2);
     document.getElementById('personalReliefValue').textContent = personalRelief.toFixed(2);
-    document.getElementById('taxAmountValue').textContent = taxAmount.toFixed(2);
+    document.getElementById('payEValue').textContent = payE.toFixed(2);
     document.getElementById('nhifDeductionValue').textContent = nhifDeduction.toFixed(2);
     document.getElementById('housingLevyValue').textContent = housingLevy.toFixed(2);
     document.getElementById('netSalaryValue').textContent = netSalary.toFixed(2);
   });
+
+  //  Resets the calculator for new calculation
+function refreshPage() {
+    window.location.reload();
+}
